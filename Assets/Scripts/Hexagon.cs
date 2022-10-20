@@ -6,6 +6,7 @@ public class Hexagon : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float shrinkSpeed = 3f;
+    public int score;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,13 @@ public class Hexagon : MonoBehaviour
     {
         transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
 
-        if(transform.localScale.x <= .05f) Destroy(gameObject);
+        if(transform.localScale.x <= .05f) 
+        {
+            score += 100;
+            print(score);
+            Destroy(gameObject);
+
+        }
     }
+
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public float spawnRate = 1.5f;
+    public float spawnRate = 2.5f;
     public GameObject hexagonPrefab;
     private float nextTimeToSpawn = 0f;
     
@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
         if(Time.time >= nextTimeToSpawn)
         {
             Instantiate(hexagonPrefab, Vector3.zero, Quaternion.identity);
-            nextTimeToSpawn = Time.time + 2f / spawnRate;
+            nextTimeToSpawn = Time.time + 3f / spawnRate;
         }
     }
 }
